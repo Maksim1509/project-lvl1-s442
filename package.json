@@ -1,6 +1,6 @@
 {
   "name": "maksim1509bgames",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "brain-games",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
