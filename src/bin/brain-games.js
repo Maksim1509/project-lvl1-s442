@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import {greeting, actualName} from '..';
+import { greeting, actualName } from '..';
 
 greeting(actualName);
