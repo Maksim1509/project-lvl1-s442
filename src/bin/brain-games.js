@@ -1,4 +1,6 @@
 #!/usr/bin/env node
 import { greeting, actualName } from '..';
 
-greeting(actualName);
+const name = actualName('May i have your name? ');
+
+greeting(name);
