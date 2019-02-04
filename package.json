@@ -1,12 +1,19 @@
 {
-  "name": "myproject",
+  "name": "maksim1509bgames",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/brain-games.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Maksim Abdulkhalikov",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
