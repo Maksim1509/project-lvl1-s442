@@ -1,8 +1,7 @@
 {
   "name": "maksim1509bgames",
   "version": "1.0.1",
-  "description": "",
-  "main": "dist/brain-games.js",
+  "description": "brain-games",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
@@ -13,6 +12,7 @@
   "files": [
     "dist"
   ],
+  "keywords": ["brain-games", "game", "brain"],
   "author": "Maksim Abdulkhalikov",
   "license": "ISC",
   "devDependencies": {
