@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-import { greeting, request, welcome } from '..';
+import greeting from '..';
 
-console.log(welcome);
-
-const name = request.question('May i have your name? ');
-
-greeting(name);
+greeting();
