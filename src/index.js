@@ -25,7 +25,7 @@ const game = (startPoints) => {
   if (answer === correctAnswer) {
     console.log('Correct!');
   } else {
-    return answer;
+    return [answer, correctAnswer];
   }
   const currentPoints = answer === sayYesOrNo(numberForQuestion) ? startPoints + 1 : startPoints;
   return game(currentPoints);
@@ -38,12 +38,11 @@ export const gameEven = () => {
   console.log(`Hello ${name}!`);
 
   const gameResult = game(0);
-  const correctAnswer = gameResult === 'yes' ? 'no' : 'yes';
 
   if (gameResult === true) {
     return console.log(`Congratulations, ${name}!`);
   }
-  return console.log(`'${gameResult}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+  return console.log(`'${gameResult[0]}' is wrong answer ;(. Correct answer was '${gameResult[1]}'.
       Let's try again, ${name}!`);
 };
 
