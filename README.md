@@ -5,5 +5,4 @@
 <a href="https://travis-ci.org/Maksim1509/project-lvl1-s442/jobs/488585940"><img
 src="https://travis-ci.org/Maksim1509/project-lvl1-s442.svg?branch=master" /></a>
 
-<a><script id="asciicast-0j1YLlFzjJ6Gb3wmr1ghdL7Wh" src="https://asciinema.org/a/0j1YLlFzjJ6Gb3wmr1ghdL7Wh.js" async></script>
-</a>    
+<a href="https://asciinema.org/a/0j1YLlFzjJ6Gb3wmr1ghdL7Wh" target="_blank"><img src="https://asciinema.org/a/0j1YLlFzjJ6Gb3wmr1ghdL7Wh.svg" /></a>
