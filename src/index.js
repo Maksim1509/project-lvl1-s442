@@ -10,13 +10,13 @@ const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min
 const isEven = int => int % 2 === 0;
 const sayYesOrNo = int => (isEven(int) ? 'yes' : 'no');
 
-const game = (name, startPoints) => {
+const game = (startPoints) => {
   const numberForQuestion = getRandomInt(1, 100);
   const correctAnswer = sayYesOrNo(numberForQuestion);
   const pointToFinish = 3;
 
   if (startPoints === pointToFinish) {
-    return console.log(`Congratulations, ${name}!`);
+    return true;
   }
 
   console.log(`Question: ${numberForQuestion}`);
@@ -25,11 +25,10 @@ const game = (name, startPoints) => {
   if (answer === correctAnswer) {
     console.log('Correct!');
   } else {
-    return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".
-        Let's try again, ${name}!`);
+    return answer;
   }
   const currentPoints = answer === sayYesOrNo(numberForQuestion) ? startPoints + 1 : startPoints;
-  return game(name, currentPoints);
+  return game(currentPoints);
 };
 
 export const gameEven = () => {
@@ -38,7 +37,14 @@ export const gameEven = () => {
   const name = readlineSync.question('May i have your name? ');
   console.log(`Hello ${name}!`);
 
-  return game(name, 0);
+  const gameResult = game(0);
+  const correctAnswer = gameResult === 'yes' ? 'no' : 'yes';
+
+  if (gameResult === true) {
+    return console.log(`Congratulations, ${name}!`);
+  }
+  return console.log(`'${gameResult}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+      Let's try again, ${name}!`);
 };
 
 export default greeting;
