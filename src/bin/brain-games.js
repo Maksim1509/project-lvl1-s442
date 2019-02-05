@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { greeting, nameRequest } from '..';
+import { greeting, request, welcome } from '..';
 
-console.log('Welcome to the Brain Games!');
+console.log(welcome);
 
-const name = nameRequest('May i have your name? ');
+const name = request.question('May i have your name? ');
 
 greeting(name);
