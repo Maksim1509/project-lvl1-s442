@@ -25,9 +25,8 @@ const game = (name, acc) => {
     console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".
         Let's try again, ${name}!`);
   }
-
-  acc = answer === sayYesOrNo(int) ? acc + 1 : acc;
-  return game(name, acc);
+  const newAcc = answer === sayYesOrNo(int) ? acc + 1 : acc;
+  return game(name, newAcc);
 };
 
 export const gameEven = () => {
