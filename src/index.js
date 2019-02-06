@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import calc from './games/calc';
 import even from './games/even';
+import gcd from './games/gcd';
 
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -15,10 +16,13 @@ const game = (typeOfGame, startPoints) => {
   const numberForQuestion1 = getRandomInt(1, 100);
   const numberForQuestion2 = getRandomInt(1, 100);
   let currentGame;
+
   switch (typeOfGame) {
     case 'calc': currentGame = calc(numberForQuestion1, numberForQuestion2);
       break;
     case 'even': currentGame = even(numberForQuestion1);
+      break;
+    case 'gcd': currentGame = gcd(numberForQuestion1, numberForQuestion2);
       break;
     default: break;
   }
@@ -26,10 +30,12 @@ const game = (typeOfGame, startPoints) => {
   if (startPoints === pointToFinish) {
     return true;
   }
+
   const [curentQuestion, curentRightAnswer] = currentGame;
 
   console.log(curentQuestion);
   const answer = readlineSync.question('Your answer: ');
+
   if (answer === `${curentRightAnswer}`) {
     console.log('Correct!');
   } else {
