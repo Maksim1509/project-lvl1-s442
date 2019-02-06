@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { gameEven } from '..';
+import { gameProcces } from '..';
 
-gameEven();
+const info = 'Answer "yes" if number even otherwise answer "no".';
+gameProcces('even', info);
