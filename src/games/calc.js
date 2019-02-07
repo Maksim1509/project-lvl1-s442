@@ -1,6 +1,4 @@
-import { gameProcess } from '..';
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+import { getRandomInt, gameProcess } from '..';
 
 const randomOperator = () => {
   let operator;
@@ -17,7 +15,9 @@ const randomOperator = () => {
   return operator;
 };
 
-const calc = (number1, number2) => {
+const calc = () => {
+  const number1 = getRandomInt(1, 100);
+  const number2 = getRandomInt(1, 100);
   const operator = randomOperator();
   const question = `Question: ${number1} ${operator} ${number2}`;
   let correctAnswer;

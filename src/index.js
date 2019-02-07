@@ -1,25 +1,20 @@
 import readlineSync from 'readline-sync';
 
-
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May i have your name? ');
   console.log(`Hello ${name}!`);
 };
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const game = (currentGame, startPoints) => {
   const pointToFinish = 3;
-  const numberForQuestion1 = getRandomInt(1, 100);
-  const numberForQuestion2 = getRandomInt(1, 100);
-
   if (startPoints === pointToFinish) {
     return true;
   }
 
-  const [curentQuestion, curentRightAnswer] = currentGame(numberForQuestion1, numberForQuestion2);
-
+  const [curentQuestion, curentRightAnswer] = currentGame();
   console.log(curentQuestion);
   const answer = readlineSync.question('Your answer: ');
 
@@ -36,9 +31,9 @@ const game = (currentGame, startPoints) => {
 export const gameProcess = (currentGame, startMessege) => {
   console.log('Welcome to the Brain Games!');
   console.log(startMessege);
+
   const name = readlineSync.question('May i have your name? ');
   console.log(`Hello ${name}!`);
-
   const gameResult = game(currentGame, 0);
 
   if (gameResult === true) {

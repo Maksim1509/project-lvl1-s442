@@ -1,4 +1,4 @@
-import { gameProcess } from '..';
+import { getRandomInt, gameProcess } from '..';
 
 const compare = (a, b) => {
   if (a > b) {
@@ -21,7 +21,9 @@ const nod = (a, b) => {
   return iter(c[0], c[1], c[0]);
 };
 
-const gcd = (number1, number2) => {
+const gcd = () => {
+  const number1 = getRandomInt(1, 100);
+  const number2 = getRandomInt(1, 100);
   const question = `Question: ${number1} ${number2}`;
   const correctAnswer = nod(number1, number2);
   return [question, correctAnswer];
