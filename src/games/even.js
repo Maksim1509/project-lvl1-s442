@@ -1,5 +1,5 @@
 import { startGame } from '..';
-import getRandomInt from '../utils/utils';
+import getRandomInt from '../utils';
 
 const isEven = num => num % 2 === 0;
 const sayYesOrNo = num => (isEven(num) ? 'yes' : 'no');

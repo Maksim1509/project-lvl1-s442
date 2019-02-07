@@ -1,5 +1,5 @@
 import { startGame } from '..';
-import getRandomInt from '../utils/utils';
+import getRandomInt from '../utils';
 
 const maxSizeProgression = 10;
 const createArithmeticProgression = (initialNum, stepSize) => {

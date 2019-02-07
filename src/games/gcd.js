@@ -1,5 +1,5 @@
 import { startGame } from '..';
-import getRandomInt from '../utils/utils';
+import getRandomInt from '../utils';
 
 const getGreatestDivisor = (firstNum, secondNum) => {
   const lowerNumber = firstNum > secondNum ? secondNum : firstNum;
