@@ -12,11 +12,11 @@ const compare = (a, b) => {
 const nod = (a, b) => {
   const c = [a, b];
   c.sort(compare);
-  const iter = (x, y, del) => {
-    if (y % del === 0 && x % del === 0) {
-      return del;
+  const iter = (x, y, div) => {
+    if (y % div === 0 && x % div === 0) {
+      return div;
     }
-    return iter(x, y, del - 1);
+    return iter(x, y, div - 1);
   };
   return iter(c[0], c[1], c[0]);
 };
