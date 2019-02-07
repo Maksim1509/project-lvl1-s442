@@ -6,11 +6,10 @@ const greeting = () => {
   console.log(`Hello ${name}!`);
 };
 
-export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const pointToWin = 3;
 
 const game = (currentGame, startPoints) => {
-  const pointToFinish = 3;
-  if (startPoints === pointToFinish) {
+  if (startPoints === pointToWin) {
     return true;
   }
 
@@ -28,15 +27,15 @@ const game = (currentGame, startPoints) => {
   return game(currentGame, currentPoints);
 };
 
-export const gameProcess = (currentGame, startMessege) => {
+export const startGame = (currentGame, startMessege) => {
   console.log('Welcome to the Brain Games!');
   console.log(startMessege);
 
   const name = readlineSync.question('May i have your name? ');
   console.log(`Hello ${name}!`);
-  const gameResult = game(currentGame, 0);
+  const isWin = game(currentGame, 0);
 
-  if (gameResult === true) {
+  if (isWin) {
     console.log(`Congratulations, ${name}!`);
   } else {
     console.log(`Let's try again, ${name}!`);

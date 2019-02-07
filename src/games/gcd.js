@@ -1,35 +1,27 @@
-import { getRandomInt, gameProcess } from '..';
+import { startGame } from '..';
+import getRandomInt from '../utils/utils';
 
-const compare = (a, b) => {
-  if (a > b) {
-    return 1;
-  } if (a < b) {
-    return -1;
-  }
-  return 0;
-};
+const getGreatestDivisor = (firstNum, secondNum) => {
+  const lowerNumber = firstNum > secondNum ? secondNum : firstNum;
+  const highestNumber = firstNum > secondNum ? firstNum : secondNum;
 
-const nod = (a, b) => {
-  const c = [a, b];
-  c.sort(compare);
-  const iter = (x, y, div) => {
-    if (y % div === 0 && x % div === 0) {
+  const iter = (highestNum, lowerNumb, div) => {
+    if (highestNum % div === 0 && lowerNumb % div === 0) {
       return div;
     }
-    return iter(x, y, div - 1);
+    return iter(highestNum, lowerNumb, div - 1);
   };
-  return iter(c[0], c[1], c[0]);
+  return iter(highestNumber, lowerNumber, lowerNumber);
 };
 
-const gcd = () => {
-  const number1 = getRandomInt(1, 100);
-  const number2 = getRandomInt(1, 100);
-  const question = `Question: ${number1} ${number2}`;
-  const correctAnswer = nod(number1, number2);
+const getDataForGame = () => {
+  const firstNum = getRandomInt(1, 100);
+  const secondNum = getRandomInt(1, 100);
+  const question = `Question: ${firstNum} ${secondNum}`;
+  const correctAnswer = getGreatestDivisor(firstNum, secondNum);
   return [question, correctAnswer];
 };
 
-const startMessage = 'Find the greatest common divisor of given numbers.';
-const startGame = () => gameProcess(gcd, startMessage);
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-export default startGame;
+export default () => startGame(getDataForGame, gameDescription);

@@ -1,16 +1,15 @@
-import { getRandomInt, gameProcess } from '..';
+import { startGame } from '..';
+import getRandomInt from '../utils/utils';
 
-const isEven = int => int % 2 === 0;
-const sayYesOrNo = int => (isEven(int) ? 'yes' : 'no');
+const isEven = num => num % 2 === 0;
+const sayYesOrNo = num => (isEven(num) ? 'yes' : 'no');
 
-const even = () => {
-  const number = getRandomInt(1, 100);
-  const question = `Question: ${number}`;
-  const correctAnswer = sayYesOrNo(number);
+const getDataForGame = () => {
+  const numberForQuestion = getRandomInt(1, 100);
+  const question = `Question: ${numberForQuestion}`;
+  const correctAnswer = sayYesOrNo(numberForQuestion);
   return [question, correctAnswer];
 };
-const startMessege = 'Answer "yes" if number even otherwise answer "no".';
+const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
 
-const startGame = () => gameProcess(even, startMessege);
-
-export default startGame;
+export default () => startGame(getDataForGame, gameDescription);

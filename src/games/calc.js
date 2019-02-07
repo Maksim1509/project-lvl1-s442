@@ -1,9 +1,10 @@
-import { getRandomInt, gameProcess } from '..';
+import { startGame } from '..';
+import getRandomInt from '../utils/utils';
 
-const randomOperator = () => {
+const getRandomOperator = () => {
   let operator;
-  const randomNumber = getRandomInt(1, 4);
-  switch (randomNumber) {
+  const randomNum = getRandomInt(1, 4);
+  switch (randomNum) {
     case 1: operator = '+';
       break;
     case 2: operator = '-';
@@ -15,25 +16,24 @@ const randomOperator = () => {
   return operator;
 };
 
-const calc = () => {
-  const number1 = getRandomInt(1, 100);
-  const number2 = getRandomInt(1, 100);
-  const operator = randomOperator();
-  const question = `Question: ${number1} ${operator} ${number2}`;
+const getDataForGame = () => {
+  const firstNum = getRandomInt(1, 100);
+  const secondNum = getRandomInt(1, 100);
+  const operator = getRandomOperator();
+  const question = `Question: ${firstNum} ${operator} ${secondNum}`;
   let correctAnswer;
   switch (operator) {
-    case '+': correctAnswer = number1 + number2;
+    case '+': correctAnswer = firstNum + secondNum;
       break;
-    case '-': correctAnswer = number1 - number2;
+    case '-': correctAnswer = firstNum - secondNum;
       break;
-    case '*': correctAnswer = number1 * number2;
+    case '*': correctAnswer = firstNum * secondNum;
       break;
     default: break;
   }
   return [question, correctAnswer];
 };
 
-const startMessage = 'What is the result of the expression?';
-const startGame = () => gameProcess(calc, startMessage);
+const gameDescription = 'What is the result of the expression?';
 
-export default startGame;
+export default () => startGame(getDataForGame, gameDescription);

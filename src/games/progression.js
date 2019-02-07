@@ -1,23 +1,25 @@
-import { getRandomInt, gameProcess } from '..';
+import { startGame } from '..';
+import getRandomInt from '../utils/utils';
 
-const arithmeticProgression = (number1, number2) => {
-  const iter = (arr, newNumber, count) => {
-    if (arr.length === 10) {
-      return arr;
+const maxSizeProgression = 10;
+const createArithmeticProgression = (initialNum, stepSize) => {
+  const iter = (startArray, firstNum) => {
+    if (startArray.length === maxSizeProgression) {
+      return startArray;
     }
-    return iter(arr.concat(newNumber), newNumber + count, count);
+    return iter(startArray.concat(firstNum), firstNum + stepSize);
   };
-  return iter([], number1, number2);
+  return iter([], initialNum);
 };
-const task = () => {
-  const number1 = getRandomInt(1, 100);
-  const number2 = getRandomInt(1, 100);
-  const arr = arithmeticProgression(number1, number2);
-  const randomNumber = getRandomInt(0, 10);
-  const correctAnswer = arr[randomNumber];
-  arr[randomNumber] = '..';
-  return [`Question: ${arr.join(' ')}`, correctAnswer];
+const getDataForGame = () => {
+  const initialNum = getRandomInt(1, 100);
+  const stepSize = getRandomInt(1, 100);
+  const arithmeticProgression = createArithmeticProgression(initialNum, stepSize);
+  const missingNum = getRandomInt(0, 10);
+  const correctAnswer = arithmeticProgression[missingNum];
+  arithmeticProgression[missingNum] = '..';
+  return [`Question: ${arithmeticProgression.join(' ')}`, correctAnswer];
 };
-const startMessage = 'What number is missing in the progression?';
-const startGame = () => gameProcess(task, startMessage);
-export default startGame;
+const gameDescription = 'What number is missing in the progression?';
+
+export default () => startGame(getDataForGame, gameDescription);
