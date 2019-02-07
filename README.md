@@ -13,6 +13,6 @@ src="https://travis-ci.org/Maksim1509/project-lvl1-s442.svg?branch=master" /></a
 
 <a href="https://asciinema.org/a/F0iNzZkZQAzzWGpLRl6JXa3C9" target="_blank"><img src="https://asciinema.org/a/F0iNzZkZQAzzWGpLRl6JXa3C9.svg" /></a>
 
-<div class ="asciicast">
-<script id="asciicast-oUO5hz47a9odR77AO7I8nl9et" src="https://asciinema.org/a/oUO5hz47a9odR77AO7I8nl9et.js" async></script>
+<div class="asciicast">
+<script id="asciicast-oUO5hz47a9odR77AO7I8nl9et" src="https://asciinema.org/a/oUO5hz47a9odR77AO7I8nl9et.js" async="" data-player="[object HTMLDivElement]"></script><div id="asciicast-container-oUO5hz47a9odR77AO7I8nl9et" class="asciicast" style="display: block; float: none; overflow: hidden; padding: 0px; margin: 20px 0px;"><iframe src="https://asciinema.org/a/oUO5hz47a9odR77AO7I8nl9et/embed?" id="asciicast-iframe-oUO5hz47a9odR77AO7I8nl9et" name="asciicast-iframe-oUO5hz47a9odR77AO7I8nl9et" scrolling="no" allowfullscreen="true" style="overflow: hidden; margin: 0px; border: 0px; display: inline-block; width: 720px; float: none; visibility: visible; height: 227px;"></iframe></div>
 </div>
