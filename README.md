@@ -13,4 +13,6 @@ src="https://travis-ci.org/Maksim1509/project-lvl1-s442.svg?branch=master" /></a
 
 <a href="https://asciinema.org/a/F0iNzZkZQAzzWGpLRl6JXa3C9" target="_blank"><img src="https://asciinema.org/a/F0iNzZkZQAzzWGpLRl6JXa3C9.svg" /></a>
 
-<a href="https://asciinema.org/a/oUO5hz47a9odR77AO7I8nl9et" target="_blank"><img src="https://asciinema.org/a/oUO5hz47a9odR77AO7I8nl9et.svg" /></a>
+<div class ="asciicast">
+<script id="asciicast-oUO5hz47a9odR77AO7I8nl9et" src="https://asciinema.org/a/oUO5hz47a9odR77AO7I8nl9et.js" async></script>
+</div>
