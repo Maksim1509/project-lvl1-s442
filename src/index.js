@@ -37,9 +37,10 @@ export const gameProcess = (currentGame, startMessege) => {
   const gameResult = game(currentGame, 0);
 
   if (gameResult === true) {
-    return console.log(`Congratulations, ${name}!`);
+    console.log(`Congratulations, ${name}!`);
+  } else {
+    console.log(`Let's try again, ${name}!`);
   }
-  return console.log(`Let's try again, ${name}!`);
 };
 
 export default greeting;
