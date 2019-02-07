@@ -19,7 +19,7 @@ const getDataForGame = () => {
   const secondNum = getRandomInt(1, 100);
   const question = `Question: ${firstNum} ${secondNum}`;
   const correctAnswer = getGreatestDivisor(firstNum, secondNum);
-  return [question, correctAnswer];
+  return [question, `${correctAnswer}`];
 };
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';

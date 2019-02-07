@@ -31,7 +31,7 @@ const getDataForGame = () => {
       break;
     default: break;
   }
-  return [question, correctAnswer];
+  return [question, `${correctAnswer}`];
 };
 
 const gameDescription = 'What is the result of the expression?';

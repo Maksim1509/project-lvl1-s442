@@ -1,24 +1,26 @@
 import { startGame } from '..';
 import getRandomInt from '../utils';
 
-const maxSizeProgression = 10;
-const createArithmeticProgression = (initialNum, stepSize) => {
+const createArithmeticProgression = (initialNum, stepSize, progressionLength) => {
   const iter = (startArray, firstNum) => {
-    if (startArray.length === maxSizeProgression) {
+    if (startArray.length === progressionLength) {
       return startArray;
     }
     return iter(startArray.concat(firstNum), firstNum + stepSize);
   };
   return iter([], initialNum);
 };
+
+const progressionLength = 10;
+
 const getDataForGame = () => {
   const initialNum = getRandomInt(1, 100);
   const stepSize = getRandomInt(1, 100);
-  const arithmeticProgression = createArithmeticProgression(initialNum, stepSize);
-  const missingNum = getRandomInt(0, 10);
-  const correctAnswer = arithmeticProgression[missingNum];
-  arithmeticProgression[missingNum] = '..';
-  return [`Question: ${arithmeticProgression.join(' ')}`, correctAnswer];
+  const progression = createArithmeticProgression(initialNum, stepSize, progressionLength);
+  const hiddenElementPosition = getRandomInt(0, progressionLength);
+  const correctAnswer = progression[hiddenElementPosition];
+  progression[hiddenElementPosition] = '..';
+  return [`Question: ${progression.join(' ')}`, `${correctAnswer}`];
 };
 const gameDescription = 'What number is missing in the progression?';
 
