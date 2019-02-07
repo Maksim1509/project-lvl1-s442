@@ -1,3 +1,5 @@
+import { gameProcess } from '..';
+
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const randomOperator = () => {
@@ -31,4 +33,7 @@ const calc = (number1, number2) => {
   return [question, correctAnswer];
 };
 
-export default calc;
+const startMessage = 'What is the result of the expression?';
+const startGame = () => gameProcess(calc, startMessage);
+
+export default startGame;

@@ -1,3 +1,5 @@
+import { gameProcess } from '..';
+
 const compare = (a, b) => {
   if (a > b) {
     return 1;
@@ -25,4 +27,7 @@ const gcd = (number1, number2) => {
   return [question, correctAnswer];
 };
 
-export default gcd;
+const startMessage = 'Find the greatest common divisor of given numbers.';
+const startGame = () => gameProcess(gcd, startMessage);
+
+export default startGame;

@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
-import calc from './games/calc';
-import even from './games/even';
-import gcd from './games/gcd';
+
 
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -11,27 +9,16 @@ const greeting = () => {
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-const game = (typeOfGame, startPoints) => {
+const game = (currentGame, startPoints) => {
   const pointToFinish = 3;
   const numberForQuestion1 = getRandomInt(1, 100);
   const numberForQuestion2 = getRandomInt(1, 100);
-  let currentGame;
-
-  switch (typeOfGame) {
-    case 'calc': currentGame = calc(numberForQuestion1, numberForQuestion2);
-      break;
-    case 'even': currentGame = even(numberForQuestion1);
-      break;
-    case 'gcd': currentGame = gcd(numberForQuestion1, numberForQuestion2);
-      break;
-    default: break;
-  }
 
   if (startPoints === pointToFinish) {
     return true;
   }
 
-  const [curentQuestion, curentRightAnswer] = currentGame;
+  const [curentQuestion, curentRightAnswer] = currentGame(numberForQuestion1, numberForQuestion2);
 
   console.log(curentQuestion);
   const answer = readlineSync.question('Your answer: ');
@@ -43,16 +30,16 @@ const game = (typeOfGame, startPoints) => {
     return false;
   }
   const currentPoints = answer === `${curentRightAnswer}` ? startPoints + 1 : startPoints;
-  return game(typeOfGame, currentPoints);
+  return game(currentGame, currentPoints);
 };
 
-export const gameProcces = (typeOfGame, info) => {
+export const gameProcess = (currentGame, startMessege) => {
   console.log('Welcome to the Brain Games!');
-  console.log(info);
+  console.log(startMessege);
   const name = readlineSync.question('May i have your name? ');
   console.log(`Hello ${name}!`);
 
-  const gameResult = game(typeOfGame, 0);
+  const gameResult = game(currentGame, 0);
 
   if (gameResult === true) {
     return console.log(`Congratulations, ${name}!`);

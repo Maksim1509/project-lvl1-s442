@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { gameProcces } from '..';
+import startGame from '../games/even';
 
-const info = 'Answer "yes" if number even otherwise answer "no".';
-gameProcces('even', info);
+
+startGame();
