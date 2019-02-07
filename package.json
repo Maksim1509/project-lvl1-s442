@@ -1,6 +1,6 @@
 {
   "name": "maksim1509bgames",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "description": "brain-games",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -11,7 +11,8 @@
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-progression": "dist/bin/brain-progression.js"
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
   },
   "files": [
     "dist"
