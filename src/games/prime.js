@@ -2,10 +2,15 @@ import startGame from '..';
 import getRandomInt from '../utils';
 
 const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  } if (num === 2) {
+    return true;
+  }
   const iter = (divisor) => {
-    if (divisor === num) {
+    if (divisor === Math.round(num / 2)) {
       return true;
-    } if (num < 2 || num % divisor === 0) {
+    } if (num % divisor === 0) {
       return false;
     }
     return iter(divisor + 1);
