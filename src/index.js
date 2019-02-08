@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const greeting = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May i have your name? ');
-  console.log(`Hello ${name}!`);
-};
-
 const pointToWin = 3;
 
 const game = (getDataForGame, startPoints) => {
@@ -26,7 +20,7 @@ const game = (getDataForGame, startPoints) => {
   return game(getDataForGame, currentPoints);
 };
 
-export const startGame = (getDataForGame, gameDescription) => {
+const startGame = (getDataForGame, gameDescription) => {
   console.log('Welcome to the Brain Games!');
   console.log(gameDescription);
 
@@ -40,5 +34,4 @@ export const startGame = (getDataForGame, gameDescription) => {
     console.log(`Let's try again, ${name}!`);
   }
 };
-
-export default greeting;
+export default startGame;

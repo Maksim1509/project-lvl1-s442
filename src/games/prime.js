@@ -1,17 +1,16 @@
-import { startGame } from '..';
+import startGame from '..';
 import getRandomInt from '../utils';
 
 const isPrime = (num) => {
-  const primeNum = 1;
   const iter = (divisor) => {
-    if (divisor === primeNum) {
+    if (divisor === num) {
       return true;
-    } if (num % divisor === 0) {
+    } if (num < 2 || num % divisor === 0) {
       return false;
     }
-    return iter(divisor - 1);
+    return iter(divisor + 1);
   };
-  return iter(Math.floor(num / 2));
+  return iter(2);
 };
 
 const getDataForGame = () => {
