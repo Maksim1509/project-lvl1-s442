@@ -2,10 +2,11 @@ import startGame from '..';
 import getRandomInt from '../utils';
 
 const isPrime = (num) => {
-  if (num < 2) {
-    return false;
-  } if (num === 2) {
+  if (num === 2) {
     return true;
+  }
+  if (num < 2 || num % 2 === 0) {
+    return false;
   }
   const iter = (divisor) => {
     if (divisor === Math.round(num / 2)) {
